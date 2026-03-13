@@ -6,28 +6,23 @@ namespace saucedemo_ui_automation.Pages
 {
 	public class BasePage
 	{
-		protected IWebDriver driver;
-		private readonly int DefaultTimeoutInSec = 5;
+		protected IWebDriver _driver;
+		private readonly int _defaultTimeoutInSec = 5;
 
 		public BasePage(IWebDriver driver)
 		{
-			this.driver = driver;
-		}
-
-		public void NavigateTo(String url)
-		{
-			driver.Navigate().GoToUrl(url);
+			this._driver = driver;
 		}
 
         public IWebElement WaitUntilElementVisible(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(DefaultTimeoutInSec));
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(_defaultTimeoutInSec));
             return wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
 
         public IWebElement WaitUntilElementVisible(By locator, int timeout)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeout));
             return wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
     }
