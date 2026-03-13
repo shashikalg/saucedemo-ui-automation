@@ -26,6 +26,10 @@
     <None Remove="Utils\" />
     <None Remove="Pages\UserOnboarding\" />
     <None Remove="Pages\Ordering\" />
+    <None Remove="Functions\" />
+    <None Remove="Functions\Cart\" />
+    <None Remove="Functions\Login\" />
+    <None Remove="Functions\Products\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
@@ -33,5 +37,9 @@
     <Folder Include="Utils\" />
     <Folder Include="Pages\UserOnboarding\" />
     <Folder Include="Pages\Ordering\" />
+    <Folder Include="Functions\" />
+    <Folder Include="Functions\Cart\" />
+    <Folder Include="Functions\Login\" />
+    <Folder Include="Functions\Products\" />
   </ItemGroup>
 </Project>
