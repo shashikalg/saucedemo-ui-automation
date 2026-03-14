@@ -27,7 +27,7 @@ jobs:
         run: dotnet build SauceDemoUIAutomation.sln --configuration Release --no-restore
 
       - name: Run UI tests
-        run: dotnet test SauceDemoUIAutomation.sln --configuration Release --no-build --logger "trx;LogFileName=test-results.trx"
+        run: dotnet test SauceDemoUIAutomation.sln --configuration Release --no-build --results-directory TestResults --logger "trx;LogFileName=test-results.trx" --logger "html;LogFileName=test-results.html"
 
       - name: Upload test results
         if: always()
