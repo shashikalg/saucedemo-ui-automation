@@ -11,7 +11,12 @@ namespace saucedemo_ui_automation.Tests
         [OneTimeSetUp]
         public void SetupTests()
         {
-            _driver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArgument("--incognito");
+            options.AddUserProfilePreference("credentials_enable_service", false);
+            options.AddUserProfilePreference("profile.password_manager_enabled", false);
+
+            _driver = new ChromeDriver(options);
         }
 
         [OneTimeTearDown]
