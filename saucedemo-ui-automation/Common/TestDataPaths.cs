@@ -1,11 +1,11 @@
 ﻿using System;
 namespace saucedemo_ui_automation.Common
 {
-	public class TestDataPaths
+	public static class TestDataPaths
 	{
-		public TestDataPaths()
-		{
-		}
-	}
+        public const string Products = "TestData/products.json";
+        public const string Users = "TestData/users.json";
+        public const string Config = "TestData/config.json";
+    }
 }
 

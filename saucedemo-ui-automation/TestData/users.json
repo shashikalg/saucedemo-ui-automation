@@ -1,11 +1,14 @@
-﻿using System;
-namespace saucedemo_ui_automation.TestData
-{
-  public class users
+﻿[
   {
-    public users()
-    {
-    }
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  {
+    "username": "locked_out_user",
+    "password": "secret_sauce"
+  },
+  {
+    "username": "problem_user",
+    "password": "secret_sauce"
   }
-}
-
+]

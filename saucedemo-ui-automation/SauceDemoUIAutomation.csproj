@@ -52,4 +52,9 @@
     <Folder Include="TestData\" />
     <Folder Include="Common\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestData\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

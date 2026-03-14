@@ -1,4 +1,5 @@
 ﻿using saucedemo_ui_automation.Common;
+using saucedemo_ui_automation.Constants;
 using saucedemo_ui_automation.Functions.Login;
 using saucedemo_ui_automation.Functions.Products;
 using saucedemo_ui_automation.Helpers;
@@ -28,7 +29,7 @@ namespace SauceDemoUIAutomation.Tests.Ordering
         [SetUp]
         public void Setup()
         {
-            loginFunctions.NavigateTo("https://www.saucedemo.com/");
+            loginFunctions.NavigateTo(FrameworkConfig.BaseUrl);
             loginFunctions.LogInWithValidUser(testUser.Username, testUser.Password);
 
         }
