@@ -9,9 +9,9 @@ namespace saucedemo_ui_automation.Factories
     {
         public static IWebDriver CreateDriver()
         {
-            return FrameworkConfig.Browser.ToLower() switch
+            return FrameworkConfig.Browser switch
             {
-                "chrome" => CreateChromeDriver(),
+                Common.BrowserType.Chrome => CreateChromeDriver(),
                 _ => throw new ArgumentException($"Unsupported browser: {FrameworkConfig.Browser}")
             };
         }

@@ -10,7 +10,7 @@ namespace saucedemo_ui_automation.Constants
             TestDataHelper.LoadObjectFromJson<EnvSettings>(TestDataPaths.Config);
 
         public static readonly string BaseUrl = _settings.BaseUrl!;
-        public static readonly string Browser = _settings.Browser!;
+        public static readonly BrowserType Browser = Enum.Parse<BrowserType>(_settings.Browser!, true);
         public static readonly bool HeadlessMode = _settings.HeadlessMode;
     }
 }
