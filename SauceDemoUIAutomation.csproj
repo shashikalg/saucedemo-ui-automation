@@ -23,7 +23,6 @@
   <ItemGroup>
     <None Remove="Pages\" />
     <None Remove="Tests\" />
-    <None Remove="Utils\" />
     <None Remove="Pages\UserOnboarding\" />
     <None Remove="Functions\" />
     <None Remove="Functions\Login\" />
@@ -42,7 +41,6 @@
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="Tests\" />
-    <Folder Include="Utils\" />
     <Folder Include="Pages\UserOnboarding\" />
     <Folder Include="Functions\" />
     <Folder Include="Functions\Login\" />
