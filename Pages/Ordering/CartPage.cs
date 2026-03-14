@@ -5,15 +5,15 @@ using saucedemo_ui_automation.Pages.Products;
 
 namespace saucedemo_ui_automation.Pages.Ordering
 {
-	public class CartPage: BasePage
-	{
-		private By _productRow = By.XPath(".//*[@data-test='inventory-item']");
+    public class CartPage : BasePage
+    {
+        private By _productRow = By.XPath(".//*[@data-test='inventory-item']");
         private By _cartContainer = By.Id("cart_contents_container");
         private By _btnCheckout = By.Id("checkout");
 
-		public CartPage(IWebDriver driver): base(driver)
-		{
-		}
+        public CartPage(IWebDriver driver) : base(driver)
+        {
+        }
 
         public void WaitUntilCartPageIsLoaded()
         {
@@ -21,7 +21,7 @@ namespace saucedemo_ui_automation.Pages.Ordering
         }
 
         public List<Product> GetProducts()
-		{
+        {
             List<Product> products = new List<Product>();
 
             IReadOnlyCollection<IWebElement> productElements = _driver.FindElements(_productRow);
@@ -39,6 +39,6 @@ namespace saucedemo_ui_automation.Pages.Ordering
         {
             _driver.FindElement(_btnCheckout).Click();
         }
-	}
+    }
 }
 

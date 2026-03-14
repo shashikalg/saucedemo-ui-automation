@@ -5,32 +5,32 @@ using saucedemo_ui_automation.Pages.Products;
 
 namespace saucedemo_ui_automation.Pages.Ordering
 {
-	public class CheckoutOverviewPage : BasePage
-	{
-		private By _lblItemTotal = By.XPath("//*[@data-test='subtotal-label']");
-		private By _summaryContainer = By.Id("checkout_summary_container");
-		private By _productRow = By.XPath("//*[@data-test='inventory-item']");
-		private By _btnFinish = By.Id("finish");
+    public class CheckoutOverviewPage : BasePage
+    {
+        private By _lblItemTotal = By.XPath("//*[@data-test='subtotal-label']");
+        private By _summaryContainer = By.Id("checkout_summary_container");
+        private By _productRow = By.XPath("//*[@data-test='inventory-item']");
+        private By _btnFinish = By.Id("finish");
 
-		public CheckoutOverviewPage(IWebDriver driver) : base(driver)
-		{
-		}
+        public CheckoutOverviewPage(IWebDriver driver) : base(driver)
+        {
+        }
 
-		public void WaitUntilCheckoutOverViewPageDisplayed()
-		{
-			WaitUntilElementVisible(_summaryContainer);
-		}
+        public void WaitUntilCheckoutOverViewPageDisplayed()
+        {
+            WaitUntilElementVisible(_summaryContainer);
+        }
 
-		public decimal GetItemTotal()
-		{
-			String total = _driver.FindElement(_lblItemTotal).Text;
-			return decimal.Parse(total);
-		}
+        public decimal GetItemTotal()
+        {
+            String total = _driver.FindElement(_lblItemTotal).Text;
+            return decimal.Parse(total);
+        }
 
-		public void ClickOnFinishButton()
-		{
-			_driver.FindElement(_btnFinish).Click();
-		}
+        public void ClickOnFinishButton()
+        {
+            _driver.FindElement(_btnFinish).Click();
+        }
 
         public List<Product> GetProducts()
         {

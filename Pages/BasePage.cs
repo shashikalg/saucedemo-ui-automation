@@ -4,15 +4,15 @@ using SeleniumExtras.WaitHelpers;
 
 namespace saucedemo_ui_automation.Pages
 {
-	public class BasePage
-	{
-		protected IWebDriver _driver;
-		private readonly int _defaultTimeoutInSec = 5;
+    public class BasePage
+    {
+        protected IWebDriver _driver;
+        private readonly int _defaultTimeoutInSec = 5;
 
-		public BasePage(IWebDriver driver)
-		{
-			this._driver = driver;
-		}
+        public BasePage(IWebDriver driver)
+        {
+            this._driver = driver;
+        }
 
         public IWebElement WaitUntilElementVisible(By locator)
         {

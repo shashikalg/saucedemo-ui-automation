@@ -7,26 +7,26 @@ using saucedemo_ui_automation.Pages.Ordering;
 
 namespace saucedemo_ui_automation.Functions.Products
 {
-	public class OrderFunctions: FunctionBase
-	{
-		ProductsPage productsPage;
-		CartPage cartPage;
-		CheckoutPage checkoutPage;
-		CheckoutOverviewPage checkoutOverviewPage;
-		OrderConfirmationPage orderConfirmationPage;
+    public class OrderFunctions : FunctionBase
+    {
+        ProductsPage productsPage;
+        CartPage cartPage;
+        CheckoutPage checkoutPage;
+        CheckoutOverviewPage checkoutOverviewPage;
+        OrderConfirmationPage orderConfirmationPage;
 
-		public OrderFunctions(IWebDriver driver):base(driver)
-		{
-			productsPage = new ProductsPage(driver);
-			cartPage = new CartPage(driver);
-			checkoutPage = new CheckoutPage(driver);
-			checkoutOverviewPage = new CheckoutOverviewPage(driver);
-			orderConfirmationPage = new OrderConfirmationPage(driver);
-		}
+        public OrderFunctions(IWebDriver driver) : base(driver)
+        {
+            productsPage = new ProductsPage(driver);
+            cartPage = new CartPage(driver);
+            checkoutPage = new CheckoutPage(driver);
+            checkoutOverviewPage = new CheckoutOverviewPage(driver);
+            orderConfirmationPage = new OrderConfirmationPage(driver);
+        }
 
-		public Product AddProductToCart(String productName)
-		{
-			productsPage.GetProductCard(productName).ClickAddToCart();
+        public Product AddProductToCart(String productName)
+        {
+            productsPage.GetProductCard(productName).ClickAddToCart();
             return productsPage.GetProductCard(productName).ToProduct();
         }
 
@@ -42,19 +42,19 @@ namespace saucedemo_ui_automation.Functions.Products
             checkoutPage.WaitTillCheckoutPageIsLoaded();
         }
 
-		public void FillCheckoutInformationAndContinue(String firstName, String lastName, String zipCode)
-		{
-			checkoutPage.EnterFirstName(firstName);
+        public void FillCheckoutInformationAndContinue(String firstName, String lastName, String zipCode)
+        {
+            checkoutPage.EnterFirstName(firstName);
             checkoutPage.EnterLastName(lastName);
             checkoutPage.EnterZipCode(zipCode);
-			checkoutPage.ClickOnContinueButton();
+            checkoutPage.ClickOnContinueButton();
         }
 
-		public String CompleteTheOrder()
-		{
-			checkoutOverviewPage.ClickOnFinishButton();
-			orderConfirmationPage.WaitUntilOrderConfirmationPageDisplayed();
-			return orderConfirmationPage.GetOrderCompletionHeader();
+        public String CompleteTheOrder()
+        {
+            checkoutOverviewPage.ClickOnFinishButton();
+            orderConfirmationPage.WaitUntilOrderConfirmationPageDisplayed();
+            return orderConfirmationPage.GetOrderCompletionHeader();
         }
 
         public List<Product> GetAllProductsInCart()
