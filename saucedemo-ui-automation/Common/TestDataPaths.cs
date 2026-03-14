@@ -5,7 +5,7 @@ namespace saucedemo_ui_automation.Common
 	{
         public const string Products = "TestData/products.json";
         public const string Users = "TestData/users.json";
-        public const string Config = "TestData/config.json";
+        public const string Config = "Config/config.json";
     }
 }
 
