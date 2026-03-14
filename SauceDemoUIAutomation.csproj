@@ -37,6 +37,7 @@
     <None Remove="Common\" />
     <None Remove="Config\" />
     <None Remove="Config\config.json" />
+    <None Remove="Factories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
@@ -54,6 +55,7 @@
     <Folder Include="TestData\" />
     <Folder Include="Common\" />
     <Folder Include="Config\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestData\**\*">

@@ -1,6 +1,5 @@
-﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
+using saucedemo_ui_automation.Factories;
 
 namespace saucedemo_ui_automation.Tests
 {
@@ -11,12 +10,7 @@ namespace saucedemo_ui_automation.Tests
         [OneTimeSetUp]
         public void SetupTests()
         {
-            var options = new ChromeOptions();
-            options.AddArgument("--incognito");
-            options.AddUserProfilePreference("credentials_enable_service", false);
-            options.AddUserProfilePreference("profile.password_manager_enabled", false);
-
-            _driver = new ChromeDriver(options);
+            _driver = WebDriverFactory.CreateDriver();
         }
 
         [OneTimeTearDown]
