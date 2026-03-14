@@ -1,4 +1,5 @@
-﻿using saucedemo_ui_automation.Functions.Login;
+﻿using saucedemo_ui_automation.Common;
+using saucedemo_ui_automation.Functions.Login;
 using saucedemo_ui_automation.Functions.Products;
 using saucedemo_ui_automation.Helpers;
 using saucedemo_ui_automation.Models;
@@ -12,6 +13,7 @@ namespace SauceDemoUIAutomation.Tests.Ordering
         LoginFunctions loginFunctions;
         OrderFunctions orderFunctions;
         List<Product> productsToAdd;
+        UserCredential testUser;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -19,24 +21,15 @@ namespace SauceDemoUIAutomation.Tests.Ordering
             loginFunctions = new LoginFunctions(_driver);
             orderFunctions = new OrderFunctions(_driver);
 
-            productsToAdd = new List<Product>();
-            Product product1 = new Product();
-            product1.Name = "Sauce Labs Backpack";
-            product1.Price = 29.99m;
-
-            Product product2 = new Product();
-            product2.Name = "Sauce Labs Bike Light";
-            product2.Price = 9.99m;
-
-            productsToAdd.Add(product1);
-            productsToAdd.Add(product2);
+            productsToAdd = TestDataHelper.LoadListFromJson<Product>(TestDataPaths.Products);
+            testUser = TestDataHelper.LoadListFromJson<UserCredential>(TestDataPaths.Users)[0];
         }
 
         [SetUp]
         public void Setup()
         {
             loginFunctions.NavigateTo("https://www.saucedemo.com/");
-            loginFunctions.LogInWithValidUser("standard_user", "secret_sauce");
+            loginFunctions.LogInWithValidUser(testUser.Username, testUser.Password);
 
         }
 

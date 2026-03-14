@@ -1,0 +1,11 @@
+﻿using System;
+namespace saucedemo_ui_automation.TestData
+{
+  public class users
+  {
+    public users()
+    {
+    }
+  }
+}
+
