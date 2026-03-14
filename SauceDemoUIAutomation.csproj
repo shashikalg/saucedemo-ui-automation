@@ -56,6 +56,8 @@
     <Folder Include="Common\" />
     <Folder Include="Config\" />
     <Folder Include="Factories\" />
+    <Folder Include=".github\" />
+    <Folder Include=".github\workflows\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestData\**\*">
@@ -64,5 +66,8 @@
     <Content Include="Config\config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".github\workflows\sauce-demo-tests.yml" />
   </ItemGroup>
 </Project>
