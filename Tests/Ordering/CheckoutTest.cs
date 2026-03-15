@@ -70,8 +70,14 @@ namespace SauceDemoUIAutomation.Tests.Ordering
 
             //Verify the products and confirm the order
             List<Product> productsInCheckoutOverview = orderFunctions.GetAllProductsInCheckoutOverview();
-            Assert.That(productsInCheckoutOverview.Count, Is.EqualTo(productsToAdd.Count));
-            Assert.That(ProductHelper.AreProductsEqual(productsToAdd, productsInCart), Is.True);
+            decimal actualTotal = orderFunctions.GetProductsTotalInCheckoutOverview();
+            decimal expectedProductTotal = productsToAdd[0].Price + productsToAdd[1].Price;
+            Assert.Multiple(() =>
+            {
+                Assert.That(productsInCheckoutOverview.Count, Is.EqualTo(productsToAdd.Count));
+                Assert.That(ProductHelper.AreProductsEqual(productsToAdd, productsInCart), Is.True);
+                Assert.That(actualTotal, Is.EqualTo(expectedProductTotal));
+            });
 
             String successHeader = orderFunctions.CompleteTheOrder();
             Assert.That(successHeader, Is.EqualTo("Thank you for your order!"));

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Text.RegularExpressions;
 using OpenQA.Selenium;
 using saucedemo_ui_automation.Functions.Login;
 using saucedemo_ui_automation.Models;
@@ -70,6 +71,13 @@ namespace saucedemo_ui_automation.Functions.Products
         public int GetProductsCountInCartBadge()
         {
             return productsPage.GetCartBadgeModule().GetNoOfProductsInCart();
+        }
+
+        public decimal GetProductsTotalInCheckoutOverview()
+        {
+            string text = checkoutOverviewPage.GetItemTotal();
+            string cleanedPrice = Regex.Replace(text, @"[^0-9\.]", "");
+            return decimal.Parse(cleanedPrice);
         }
     }
 }

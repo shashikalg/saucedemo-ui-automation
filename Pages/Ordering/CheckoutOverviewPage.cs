@@ -21,10 +21,9 @@ namespace saucedemo_ui_automation.Pages.Ordering
             WaitUntilElementVisible(_summaryContainer);
         }
 
-        public decimal GetItemTotal()
+        public String GetItemTotal()
         {
-            String total = _driver.FindElement(_lblItemTotal).Text;
-            return decimal.Parse(total);
+            return _driver.FindElement(_lblItemTotal).Text;
         }
 
         public void ClickOnFinishButton()
