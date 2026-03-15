@@ -17,6 +17,7 @@
     And I enter checkout information
       | FirstName | LastName | PostalCode |
       | Anna      | Peterson | 1120       |
-    And I complete the order
+    Then the item total should match the selected products total
+    When I complete the order
     Then I should see the order confirmation message "Thank you for your order!"
 

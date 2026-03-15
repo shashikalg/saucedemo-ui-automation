@@ -165,9 +165,12 @@ namespace saucedemo_ui_automation.Features
     await testRunner.AndAsync("I enter checkout information", ((string)(null)), table2, "And ");
 #line hidden
 #line 20
-    await testRunner.AndAsync("I complete the order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+    await testRunner.ThenAsync("the item total should match the selected products total", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
 #line 21
+    await testRunner.WhenAsync("I complete the order", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 22
     await testRunner.ThenAsync("I should see the order confirmation message \"Thank you for your order!\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }

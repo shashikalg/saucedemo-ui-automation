@@ -98,6 +98,15 @@ namespace saucedemo_ui_automation.StepDefinitions
                 row["PostalCode"]);
         }
 
+        [Then("the item total should match the selected products total")]
+        public void ThenTheItemTotalShouldMatchTheSelectedProductsTotal()
+        {
+            decimal expectedProductTotal = _selectedProducts.Sum(product => product.Price);
+            decimal actualTotal = OrderFunctions.GetProductsTotalInCheckoutOverview();
+
+            Assert.That(actualTotal, Is.EqualTo(expectedProductTotal));
+        }
+
         [When("I complete the order")]
         public void WhenICompleteTheOrder()
         {
