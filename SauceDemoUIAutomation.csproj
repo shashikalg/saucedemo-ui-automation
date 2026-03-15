@@ -15,9 +15,10 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
     <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    <PackageReference Include="Reqnroll.NUnit" Version="3.3.3" />
     <PackageReference Include="Selenium.Support" Version="4.11.0" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" />
     <PackageReference Include="SeleniumExtras.WaitHelpers" Version="1.0.2" />
+    <PackageReference Include="Reqnroll" Version="3.3.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,9 @@
     <None Remove="Config\" />
     <None Remove="Config\config.json" />
     <None Remove="Factories\" />
+    <None Remove="Features\" />
+    <None Remove="Hooks\" />
+    <None Remove="StepDefinitions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
@@ -56,6 +60,9 @@
     <Folder Include="Factories\" />
     <Folder Include=".github\" />
     <Folder Include=".github\workflows\" />
+    <Folder Include="Features\" />
+    <Folder Include="Hooks\" />
+    <Folder Include="StepDefinitions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestData\**\*">

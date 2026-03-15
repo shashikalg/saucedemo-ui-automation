@@ -8,6 +8,7 @@ A UI automation framework built to automate core e-commerce user flows on the Sa
 * .NET 6
 * Selenium WebDriver
 * NUnit
+* Reqnroll (BDD / Gherkin)
 * GitHub Actions
 
 ## Project Setup
@@ -41,6 +42,9 @@ Functions/           business flow layer
 Helpers/             utility classes
 Factories/           WebDriver factory
 Models/              data models
+Features/            Reqnroll feature files (BDD scenarios)
+StepDefinitions/     Reqnroll step definitions
+Hooks/               Reqnroll hooks for scenario setup/teardown
 Tests/               NUnit test classes
 .github/workflows/   GitHub Actions CI workflow
 ```
@@ -87,10 +91,19 @@ Example:
 }
 ```
 
+## Test Approach
+
+The framework includes both:
+
+* NUnit-based test implementation for standard automation execution
+
+* Reqnroll-based BDD scenario implementation using Gherkin for behavior-driven test coverage
+
+This allows the same business flow to be exercised through both conventional NUnit tests and BDD-style feature scenarios.
+
 ## Special Considerations / Assumptions
 
 * Chrome is currently supported.
 * Headless mode is recommended for CI execution.
 * Tests run against the public SauceDemo application.
-* Test data is externalized through JSON files.
 * GitHub Actions uploads generated `.trx` and `.html` test result artifacts after test execution.
